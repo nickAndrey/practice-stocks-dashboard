@@ -46,6 +46,10 @@ const linksConfig = [
 ];
 
 function Navigation() {
+  const baseLinkClasses = `group flex items-center gap-2 py-2.5 px-5 rounded-lg hover:bg-light-purple hover:text-purple transition-colors`;
+  const activeClasses = `bg-light-purple text-purple active`;
+  const iconBaseClasses = `w-6 h-6 flex items-center justify-center group-hover:nth-[1]:text-purple transition-colors text-gray-400 group-[.active]:nth-[1]:text-purple`;
+
   return (
     <aside className="px-5">
       <nav>
@@ -56,12 +60,10 @@ function Navigation() {
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    `group flex items-center gap-2 py-2.5 px-5 rounded-lg hover:bg-light-purple hover:text-purple transition-colors ${isActive ? 'bg-light-purple text-purple active' : ''}`
+                    `${baseLinkClasses} ${isActive ? activeClasses : ''}`
                   }
                 >
-                  <span className="w-6 h-6 flex items-center justify-center group-hover:nth-[1]:text-purple transition-colors text-gray-400 group-[.active]:nth-[1]:text-purple">
-                    {item.icon}
-                  </span>
+                  <span className={iconBaseClasses}>{item.icon}</span>
                   {item.label}
                 </NavLink>
               </li>
