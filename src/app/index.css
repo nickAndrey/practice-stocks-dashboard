@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+@theme {
+  /* define your project's custom design tokens */
+  --color-grey: #f7f6f9;
+  --color-blue: #6425fe;
+  --color-green: #a6f7e2;
+  --color-yellow: #ffe5a5;
+  --color-light-blue: #9ec6fa;
+  --color-purple: #6425fe;
+  --color-light-purple: #efe9ff;
+}
